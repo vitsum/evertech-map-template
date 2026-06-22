@@ -1,0 +1,60 @@
+# ==== Unity generated (regenerated on open — never commit) ====
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+/UnityPackageManager/
+
+# Asset meta files must be kept whenever their asset is kept
+!/[Aa]ssets/**/*.meta
+
+# ==== Auto-generated IDE / solution files ====
+ExportedObj/
+.consulo/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# ==== Crash / info dumps ====
+sysinfo.txt
+crashlytics-build.properties
+
+# ==== Build artifacts ====
+*.apk
+*.aab
+*.unitypackage
+*.app
+
+# Built custom-map AssetBundles (rebuilt via Custom Tools → Build Map)
+/[Aa]ssets/[Aa]ssetBundles/[Aa]ndroid/
+/[Aa]ssets/[Aa]ssetBundles/[Ww]indows64/
+/[Aa]ssets/[Aa]ssetBundles/iOS/
+
+# ==== IDE / editor ====
+.vs/
+.vscode/
+.idea/
+.vsconfig
+
+# ==== OS ====
+.DS_Store
+Thumbs.db
