@@ -20,7 +20,7 @@ Open it, edit the scene, build, and drop the result into the game.
 | Path | What it is |
 |---|---|
 | `Assets/Scene.unity` | The map scene. **This is what gets built into the map.** Its AssetBundle name is `scene` — keep it. |
-| `Assets/MapScripts/` | Map markers (`PlayerSpawnPoint`, `WaterLevel`, …). |
+| `Assets/MapScripts/` | Map markers (`PlayerSpawnPoint`, `WaterLevel`). |
 | `Assets/MapSDK/` | The Map Settings SDK — lets you expose in-game settings, **no coding**. |
 | `Assets/Editor/AssetBundleCreator.cs` | The build tool (menu **Custom Tools → Build Map …**). |
 | `Assets/AssetBundles/` | Build output + your `info.json` and `preview.png`. This folder becomes your map. |
@@ -45,8 +45,6 @@ Edit `Assets/Scene.unity` freely — terrain, props, lighting, etc.
 - **Water Level** — empty GameObject + component **`WaterLevel`**.
   The object's **world Y** becomes the water surface height.
   **Optional** — without it the game uses its built-in default water level.
-
-(Other markers exist in `Assets/MapScripts/`: `PushDown`, `PushForward`, `SpeedLimit`, … — add them the same way if your map needs them.)
 
 ---
 

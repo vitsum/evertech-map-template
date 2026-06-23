@@ -20,7 +20,7 @@ Buka, edit scene-nya, build, lalu taruh hasilnya ke dalam game.
 | Path | Keterangan |
 |---|---|
 | `Assets/Scene.unity` | Scene peta. **Inilah yang di-build menjadi peta.** Nama AssetBundle-nya `scene` — jangan diubah. |
-| `Assets/MapScripts/` | Penanda peta (`PlayerSpawnPoint`, `WaterLevel`, …). |
+| `Assets/MapScripts/` | Penanda peta (`PlayerSpawnPoint`, `WaterLevel`). |
 | `Assets/MapSDK/` | SDK Map Settings — untuk menampilkan pengaturan di dalam game, **tanpa coding**. |
 | `Assets/Editor/AssetBundleCreator.cs` | Alat build (menu **Custom Tools → Build Map …**). |
 | `Assets/AssetBundles/` | Hasil build + `info.json` dan `preview.png` milikmu. Folder ini yang menjadi peta-mu. |
@@ -45,8 +45,6 @@ Edit `Assets/Scene.unity` sebebasnya — medan, properti, pencahayaan, dll.
 - **Water Level** — GameObject kosong + komponen **`WaterLevel`**.
   Nilai **Y (world)** objek menjadi ketinggian permukaan air.
   **Opsional** — tanpa ini game memakai ketinggian air default bawaannya.
-
-(Ada penanda lain di `Assets/MapScripts/`: `PushDown`, `PushForward`, `SpeedLimit`, … — tambahkan dengan cara yang sama bila diperlukan.)
 
 ---
 

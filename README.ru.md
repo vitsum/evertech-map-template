@@ -20,7 +20,7 @@
 | Путь | Что это |
 |---|---|
 | `Assets/Scene.unity` | Сцена карты. **Именно она собирается в карту.** Имя её AssetBundle — `scene`, не меняйте. |
-| `Assets/MapScripts/` | Маркеры карты (`PlayerSpawnPoint`, `WaterLevel`, …). |
+| `Assets/MapScripts/` | Маркеры карты (`PlayerSpawnPoint`, `WaterLevel`). |
 | `Assets/MapSDK/` | SDK настроек карты — позволяет добавлять игровые настройки **без кода**. |
 | `Assets/Editor/AssetBundleCreator.cs` | Инструмент сборки (меню **Custom Tools → Build Map …**). |
 | `Assets/AssetBundles/` | Результат сборки + ваши `info.json` и `preview.png`. Эта папка и становится картой. |
@@ -45,8 +45,6 @@
 - **Water Level** — пустой GameObject + компонент **`WaterLevel`**.
   **Мировая Y** объекта = высота поверхности воды.
   **Необязателен** — без него игра использует свой дефолтный уровень воды.
-
-(В `Assets/MapScripts/` есть и другие маркеры: `PushDown`, `PushForward`, `SpeedLimit`, … — добавляются так же, если нужны.)
 
 ---
 
