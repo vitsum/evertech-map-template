@@ -11,7 +11,7 @@ public class AssetBundleCreator {
     private static string WindowsPath = "AssetBundles/Windows64";
     private static string IOSPath = "AssetBundles/iOS";
 
-    [MenuItem("Custom Tools/Build Map for all platforms")]
+    [MenuItem("Custom Tools/Build Map for all platforms", false, 0)]
     public static void BuildAllPlatforms()
     {
         ClearFolders();
@@ -20,10 +20,25 @@ public class AssetBundleCreator {
         BuildBundlesWindows64();
     }
 
-    [MenuItem("Custom Tools/Build Map for Android only")]
+    // NOTE: every "only" build clears ALL platform output folders first, so any
+    // previously built platforms are wiped — only the chosen one is rebuilt.
+
+    [MenuItem("Custom Tools/Build Map for Android only (clears other platforms)", false, 20)]
     public static void BuildAndroid(){
         ClearFolders();
         BuildBundlesAndroid();
+    }
+
+    [MenuItem("Custom Tools/Build Map for Windows only (clears other platforms)", false, 21)]
+    public static void BuildWindows(){
+        ClearFolders();
+        BuildBundlesWindows64();
+    }
+
+    [MenuItem("Custom Tools/Build Map for iOS only (clears other platforms)", false, 22)]
+    public static void BuildIOS(){
+        ClearFolders();
+        BuildBundlesIOS();
     }
     
     private static void BuildBundlesAndroid()
