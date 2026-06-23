@@ -108,7 +108,7 @@ SDK позволяет игрокам менять вашу карту из иг
 ## 4. Соберите карту
 
 Меню: **Custom Tools → Build Map for all platforms**
-(или **Build Map for Android only** для быстрой тестовой сборки).
+Для быстрой сборки под одну платформу есть также **Build Map for Android only**, **Build Map for Windows only** и **Build Map for iOS only** — но каждая «only»-сборка сначала **очищает вывод остальных платформ** и пересобирает только выбранную.
 
 Бандлы запишутся в `Assets/AssetBundles/<Platform>/` для всех платформ, которые использует игра:
 `Android`, `Windows64`, `iOS`.

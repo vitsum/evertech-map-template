@@ -108,7 +108,7 @@ Edit these two files in `Assets/AssetBundles/`:
 ## 4. Build the map
 
 Menu: **Custom Tools → Build Map for all platforms**
-(or **Build Map for Android only** for a quick test build).
+For a quick single-platform test there are also **Build Map for Android only**, **Build Map for Windows only**, and **Build Map for iOS only** — but each *only* build **clears the other platforms' output** first and rebuilds just that one.
 
 This writes the AssetBundles into `Assets/AssetBundles/<Platform>/` for every platform the game uses:
 `Android`, `Windows64`, `iOS`.

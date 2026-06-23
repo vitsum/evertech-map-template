@@ -108,7 +108,7 @@ Edit dua file ini di `Assets/AssetBundles/`:
 ## 4. Build peta
 
 Menu: **Custom Tools → Build Map for all platforms**
-(atau **Build Map for Android only** untuk build uji cepat).
+Untuk build uji satu platform tersedia juga **Build Map for Android only**, **Build Map for Windows only**, dan **Build Map for iOS only** — tetapi tiap build *only* lebih dulu **menghapus output platform lain** dan hanya membangun ulang yang dipilih.
 
 Ini menulis AssetBundle ke `Assets/AssetBundles/<Platform>/` untuk tiap platform yang dipakai game:
 `Android`, `Windows64`, `iOS`.
