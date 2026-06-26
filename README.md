@@ -45,6 +45,10 @@ Edit `Assets/Scene.unity` freely — terrain, props, lighting, etc.
 - **Water Level** — empty GameObject + component **`WaterLevel`**.
   The object's **world Y** becomes the water surface height.
   **Optional** — without it the game uses its built-in default water level.
+  - When the camera goes below this Y the game shows its underwater screen effect (a colored overlay).
+  - **Custom underwater look (optional):** tick **Override Appearance** to set your own
+    **Tint Color** (RGB; alpha = strength) and toggle the **Play Sound** ambience.
+    Leave it off and the map keeps the game's default underwater look.
 
 ---
 

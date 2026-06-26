@@ -45,6 +45,10 @@ Edit `Assets/Scene.unity` sebebasnya — medan, properti, pencahayaan, dll.
 - **Water Level** — GameObject kosong + komponen **`WaterLevel`**.
   Nilai **Y (world)** objek menjadi ketinggian permukaan air.
   **Opsional** — tanpa ini game memakai ketinggian air default bawaannya.
+  - Saat kamera turun di bawah Y ini, game menampilkan efek bawah air (overlay berwarna di layar).
+  - **Tampilan bawah air kustom (opsional):** centang **Override Appearance** untuk mengatur
+    **Tint Color** sendiri (RGB; alpha = kekuatan) dan tombol **Play Sound** (suara bawah air).
+    Biarkan mati maka peta memakai efek bawah air default game.
 
 ---
 
