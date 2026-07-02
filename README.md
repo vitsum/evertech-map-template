@@ -20,7 +20,7 @@ Open it, edit the scene, build, and drop the result into the game.
 | Path | What it is |
 |---|---|
 | `Assets/Scene.unity` | The map scene. **This is what gets built into the map.** Its AssetBundle name is `scene` — keep it. |
-| `Assets/MapScripts/` | Map markers (`PlayerSpawnPoint`, `WaterLevel`). |
+| `Assets/MapScripts/` | Map markers (`PlayerSpawnPoint`, `WaterLevel`, `LadderVolume`). |
 | `Assets/MapSDK/` | The Map Settings SDK — lets you expose in-game settings, **no coding**. |
 | `Assets/Editor/AssetBundleCreator.cs` | The build tool (menu **Custom Tools → Build Map …**). |
 | `Assets/AssetBundles/` | Build output + your `info.json` and `preview.png`. This folder becomes your map. |
@@ -37,7 +37,7 @@ Edit `Assets/Scene.unity` freely — terrain, props, lighting, etc.
 > ⚠️ **Do NOT add a Camera.** The game supplies the player and camera.
 > ⚠️ Keep everything in **this one scene** — only `Assets/Scene.unity` is built into the map.
 
-### Markers (both optional)
+### Markers (all optional)
 
 - **Player Spawn Point** — empty GameObject + component **`PlayerSpawnPoint`**.
   Sets where the player appears and which way they face (the blue **Z / forward** axis).
@@ -49,6 +49,18 @@ Edit `Assets/Scene.unity` freely — terrain, props, lighting, etc.
   - **Custom underwater look (optional):** tick **Override Appearance** to set your own
     **Tint Color** (RGB; alpha = strength) and toggle the **Play Sound** ambience.
     Leave it off and the map keeps the game's default underwater look.
+- **Ladder climb zone** — GameObject + component **`LadderVolume`** (adds a **BoxCollider** automatically).
+  An **invisible trigger volume placed in front of a vertical ladder** — it is *not* the ladder,
+  just the "grab" zone the player walks into to start climbing (like the built-in ladders).
+  - The ladder itself **still needs its own solid collider** — one flat, wall-like collider over
+    the whole ladder (**not one per rung**) so the climbing player presses against it and doesn't
+    fall through. `LadderVolume` is trigger-only and does *not* provide this.
+  - Put this box **just in front of** that solid surface, sized to the reachable climb area
+    (slight overlap with the ladder is fine).
+  - Keep the object **upright**; the player climbs along its local **Up (green Y)** axis.
+  - 👉 See the ready-made **`Ladder`** example in `Assets/Scene.unity`: a solid wall-like
+    collider (`Ladder`) with the visible rungs as children, and a `LadderVolume` trigger sitting
+    right in front of it. Copy that setup for your own ladders.
 
 ---
 

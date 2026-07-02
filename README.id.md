@@ -20,7 +20,7 @@ Buka, edit scene-nya, build, lalu taruh hasilnya ke dalam game.
 | Path | Keterangan |
 |---|---|
 | `Assets/Scene.unity` | Scene peta. **Inilah yang di-build menjadi peta.** Nama AssetBundle-nya `scene` — jangan diubah. |
-| `Assets/MapScripts/` | Penanda peta (`PlayerSpawnPoint`, `WaterLevel`). |
+| `Assets/MapScripts/` | Penanda peta (`PlayerSpawnPoint`, `WaterLevel`, `LadderVolume`). |
 | `Assets/MapSDK/` | SDK Map Settings — untuk menampilkan pengaturan di dalam game, **tanpa coding**. |
 | `Assets/Editor/AssetBundleCreator.cs` | Alat build (menu **Custom Tools → Build Map …**). |
 | `Assets/AssetBundles/` | Hasil build + `info.json` dan `preview.png` milikmu. Folder ini yang menjadi peta-mu. |
@@ -37,7 +37,7 @@ Edit `Assets/Scene.unity` sebebasnya — medan, properti, pencahayaan, dll.
 > ⚠️ **JANGAN tambahkan Camera.** Game sudah menyediakan pemain dan kamera.
 > ⚠️ Simpan semuanya di **satu scene ini saja** — hanya `Assets/Scene.unity` yang di-build ke peta.
 
-### Penanda (keduanya opsional)
+### Penanda (semuanya opsional)
 
 - **Player Spawn Point** — GameObject kosong + komponen **`PlayerSpawnPoint`**.
   Menentukan di mana pemain muncul dan arah hadapnya (sumbu biru **Z / forward**).
@@ -49,6 +49,18 @@ Edit `Assets/Scene.unity` sebebasnya — medan, properti, pencahayaan, dll.
   - **Tampilan bawah air kustom (opsional):** centang **Override Appearance** untuk mengatur
     **Tint Color** sendiri (RGB; alpha = kekuatan) dan tombol **Play Sound** (suara bawah air).
     Biarkan mati maka peta memakai efek bawah air default game.
+- **Zona panjat tangga** — GameObject + komponen **`LadderVolume`** (otomatis menambah **BoxCollider**).
+  Sebuah **volume trigger tak terlihat yang diletakkan DI DEPAN tangga vertikal** — ini *bukan*
+  tangganya, hanya zona "pegang": pemain masuk ke kotak lalu mulai memanjat (seperti tangga bawaan).
+  - Tangganya sendiri **tetap butuh collider padat** — satu collider datar seperti dinding menutupi
+    seluruh tangga (**bukan per anak tangga**) agar pemain yang memanjat menekannya dan tidak jatuh
+    tembus. `LadderVolume` hanya trigger dan *tidak* menyediakan collider ini.
+  - Letakkan kotak ini **tepat di depan** permukaan padat itu, seukuran area panjat yang terjangkau
+    (sedikit tumpang-tindih dengan tangga tidak masalah).
+  - Jaga objek tetap **tegak**; pemain memanjat sepanjang sumbu lokal **Up (Y hijau)**.
+  - 👉 Lihat contoh siap pakai **`Ladder`** di `Assets/Scene.unity`: sebuah collider padat seperti
+    dinding (`Ladder`) dengan anak-anak tangga sebagai child, dan trigger `LadderVolume` tepat di
+    depannya. Salin susunan itu untuk tangga buatanmu.
 
 ---
 
